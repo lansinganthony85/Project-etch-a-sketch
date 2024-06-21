@@ -1,0 +1,12 @@
+#set_grid_size {
+    display: block;
+    margin: auto;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    background-color: white;
+    border: thin solid black;
+}
