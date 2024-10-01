@@ -1,6 +1,10 @@
-#set_grid_size {
+#buttons {
+    text-align: center;
     display: block;
-    margin: auto;
+}
+
+#set_grid_size {
+    display: inline-block;
 }
 
 #container {

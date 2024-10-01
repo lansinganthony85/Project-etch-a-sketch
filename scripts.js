@@ -1,3 +1,8 @@
+const width = 500;
+const height = 500;
+
+let global_size;
+
 function createSketchGrid(size = 16) {
 
     if(size > 100)
@@ -26,6 +31,8 @@ function createSketchGrid(size = 16) {
 
         container.appendChild(div);
     }
+
+    global_size = size;
 }
 
 function deleteChildren() {
@@ -37,13 +44,16 @@ function initContainer() {
     container.setAttribute("style", "width: " + width + "px; height: " + height + "px;");
 }
 
-const width = 500;
-const height = 500;
-
-const button = document.querySelector("#set_grid_size");
-button.addEventListener("click", () => {
+const size_button = document.querySelector("#set_grid_size");
+size_button.addEventListener("click", () => {
     let size = prompt("Please enter a grid size (no greater than 100):", "16");
     createSketchGrid(size);
+});
+
+const clear_button = document.querySelector("#clear_button");
+clear_button.addEventListener("click", () => {
+    deleteChildren();
+    createSketchGrid(global_size);
 });
 
 initContainer();
